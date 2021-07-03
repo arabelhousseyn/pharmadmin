@@ -1,0 +1,281 @@
+body{
+    background-color: #f5f7fb  !important;
+}
+#login{
+width: auto;
+margin: 10% 30% 0 30%;
+}
+
+.titleColor{
+    color: #515152;
+}
+
+.buttonColor{
+    background-color: #467fd0 !important;
+}
+
+.weight{
+    font-weight: bold;
+}
+
+.self{
+    padding: 50px;
+}
+
+.center{
+    text-align: center  !important;
+}
+
+.left{
+    margin-left: 15px  !important;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.5;
+  transition-property: opacity;
+  transition-timing-function: ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0
+}
+
+@media only screen and (max-width:500px){
+    #login{
+        width: auto;
+        margin: 10% 20% 0 20%;
+        }
+}
+
+.special{
+    background-color: white !important;
+    color: black  !important;
+    box-shadow: none  !important;
+    outline: none  !important;
+}
+
+.brdtop{
+    border-top: 4px solid #62acb5;
+}
+
+.reltv{
+    position: relative;
+    bottom: 15px;
+}
+
+.flx{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#cmds_filter{
+    float: right !important;
+}
+
+#cmds_paginate{
+    float: right;
+}
+
+#cmds_info{
+    display: none;
+}
+
+.dataTables_empty{
+    font-size: 0;
+}
+
+.dataTables_empty::before{
+    font-size:medium;
+    font-weight: bold;
+    content: "Pas de donnè";
+    text-align: center;
+}
+
+#cmds_filter > label{
+    font-size: 0;
+}
+
+#cmds_filter > label::before{
+    font-size:medium;
+    font-weight: bold;
+    content: "Recherche : ";
+}
+
+.dataTables_length > label{
+    font-size: 0;
+}
+
+.dataTables_length > label::before{
+    font-size:medium;
+    font-weight: bold;
+    content: "Afficher";
+}
+
+.red{
+    color: red;
+}
+
+.yellow{
+    color: #d3d314;
+}
+
+.green{
+    color:green;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.btnsp{
+    background: none;
+    outline: none;
+    border: none;
+}
+#cmds_next > a{
+    font-size: 0px;
+}
+#cmds_next > a::before{
+    font-size: medium;
+    font-weight: bold;
+    content: "Suivant";
+}
+
+#cmds_previous > a{
+    font-size: 0px;
+}
+#cmds_previous > a::before{
+    font-size: medium;
+    font-weight: bold;
+    content: "Précédent";
+}
+
+#id{
+    display: none;
+}
+
+#scrl{
+    height: 200px;
+    overflow-y: scroll;
+}
+
+#noned{
+    outline: none;
+    border: none;
+    background: none;
+}
+
+.flxbtn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputnone{
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.btnorder{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.btnord{
+    display: flex;
+    flex-direction: column;
+}
+
+.second{
+    float: right;
+}
+
+
+#cmdss_filter{
+    float: right !important;
+}
+
+#cmdss_paginate{
+    float: right;
+}
+
+#cmdss_info{
+    display: none;
+}
+
+.dataTables_empty{
+    font-size: 0;
+}
+
+.dataTables_empty::before{
+    font-size:medium;
+    font-weight: bold;
+    content: "Pas de donnè";
+    text-align: center;
+}
+
+#cmdss_filter > label{
+    font-size: 0;
+}
+
+#cmdss_filter > label::before{
+    font-size:medium;
+    font-weight: bold;
+    content: "Recherche : ";
+}
+
+.dataTables_length > label{
+    font-size: 0;
+}
+
+.dataTables_length > label::before{
+    font-size:medium;
+    font-weight: bold;
+    content: "Afficher";
+}
+
+#cmdss_next > a{
+    font-size: 0px;
+}
+#cmdss_next > a::before{
+    font-size: medium;
+    font-weight: bold;
+    content: "Suivant";
+}
+
+#cmdss_previous > a{
+    font-size: 0px;
+}
+#cmdss_previous > a::before{
+    font-size: medium;
+    font-weight: bold;
+    content: "Précédent";
+}
+
+
+.infos{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.search{
+    padding: 10px;
+}
+
