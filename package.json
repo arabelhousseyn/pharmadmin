@@ -22,6 +22,7 @@
     "push.js": "^1.0.12",
     "vue": "^2.6.11",
     "vue-apexcharts": "^1.6.1",
+    "vue-money-format": "^1.2.1",
     "vue-print-nb": "^1.6.0",
     "vue-product-zoomer": "^3.0.1",
     "vue-router": "^3.2.0",

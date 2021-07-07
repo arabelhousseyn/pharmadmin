@@ -42,7 +42,9 @@ export default {
            this.disabled = true
            var run =  axios.post(this.link() + 'loginCheck',this.login,this.cors())
            run.then(e=>{
-                if(e.data == "nopass")
+               if(e.status == 200)
+               {
+                    if(e.data == "nopass")
                {
                    this.statu('Mot de passe Incorrect','error')
                   this.disabled = false
@@ -58,6 +60,9 @@ export default {
                    localStorage.setItem('logged',e.data[0].username_user)
                    localStorage.setItem('statu',e.data[0].statu)
                    location.reload()
+               }
+               }else{
+                   this.alrt('Erreur dans server','','error')
                }
            })
            run.catch(e=>{

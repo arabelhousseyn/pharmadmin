@@ -87,23 +87,28 @@ export default {
        setInterval(() => {
      let run =  axios.get(this.link() + 'getnotifications',this.cors())
    run.then(e=>{
-     localStorage.setItem('statusCode',e.status)
+     if(e.status == 200)
+     {
+       localStorage.setItem('statusCode',e.status)
        this.numberofNotifs = e.data.length
-     this.Notifs = e.data
-     for (const notif of e.data) {
-       notif.notif.notif_date = m(notif.notif.notif_date).calendar()
-       if(notif.notif.pushed == 0)
-       {
-         Push.create("p-pharm", {
-    body: "Nouvelle commande " + notif.notif.ref_commande + ' de ' + notif.client.fname + ' ' + notif.client.lname,
-    icon: 'assets/images/logo.jpg',
-    timeout: 4000,
-    onClick: function () {
+       this.Notifs = e.data
+       for (const notif of e.data) {
+         notif.notif.notif_date = m(notif.notif.notif_date).calendar()
+         if(notif.notif.pushed == 0)
+          {
+          Push.create("p-pharm", {
+           body: "Nouvelle commande " + notif.notif.ref_commande + ' de ' + notif.client.fname + ' ' + notif.client.lname,
+            icon: 'assets/images/logo.jpg',
+           timeout: 4000,
+        onClick: function () {
         location.href = '/ventecart'
         this.close();
     }
 });
        }
+     }
+     }else{
+       this.alrt('Erreur dans server','','error')
      }
    })
    }, 3000);

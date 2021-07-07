@@ -597,6 +597,8 @@ import linechartVente from '../charts/linechartVente'
 import linechartAchat from '../charts/linechartAchat'
 import linechartstkVente from '../charts/linechartstkVente'
 import linechartstkAchat from '../charts/linechartstkAchat'
+import MoneyFormat from 'vue-money-format'
+
 export default {
   data : ()=>{
     return{
@@ -624,13 +626,19 @@ export default {
     linechartVente,
     linechartAchat,
     linechartstkVente,
-    linechartstkAchat
+    linechartstkAchat,
+    'money-format': MoneyFormat
   },
  async created()
   {
     var rn1 = axios.get(this.link() + 'countvente',this.cors())
     rn1.then(e=>{
-      this.infos.ventes = e.data
+      if(e.status == 200)
+      {
+        this.infos.ventes = e.data
+      }else{
+        this.alrt('Erreur dans server','','error')
+      }
     })
     rn1.catch(e=>{
       console.log('err')
@@ -638,7 +646,12 @@ export default {
 
     var rn2 = axios.get(this.link() + 'countachat',this.cors())
     rn2.then(e=>{
-      this.infos.achat = e.data
+      if(e.status == 200)
+      {
+        this.infos.achat = e.data
+      }else{
+        this.alrt('Erreur dans server','','error')
+      }
     })
     rn2.catch(e=>{
       console.log('err')
@@ -646,7 +659,12 @@ export default {
 
     var run1 = axios.get(this.link() + 'ventejour',this.cors())
     run1.then(e=>{
-      this.infos.venteday = e.data
+      if(e.status == 200)
+      {
+        this.infos.venteday = e.data
+      }else{
+        this.alrt('Erreur dans server','','error')
+      }
     })
     run1.catch(e=>{
       console.log('err')
@@ -654,7 +672,12 @@ export default {
 
     var run2 = axios.get(this.link() + 'ventemois',this.cors())
     run2.then(e=>{
-      this.infos.ventemonth = e.data
+      if(e.status == 200)
+      {
+        this.infos.ventemonth = e.data
+      }else{
+        this.alrt('Erreur dans server','','error')
+      }
     })
     run2.catch(e=>{
       console.log('err')
@@ -662,7 +685,12 @@ export default {
 
     var run11 = axios.get(this.link() + 'achatjour',this.cors())
     run11.then(e=>{
-      this.infos.achatday = e.data
+      if(e.status == 200)
+      {
+        this.infos.achatday = e.data
+      }else{
+        this.alrt('Erreur dans server','','error')
+      }
     })
     run11.catch(e=>{
       console.log('err')
@@ -670,7 +698,12 @@ export default {
 
     var run22 = axios.get(this.link() + 'achatmois',this.cors())
     run22.then(e=>{
-      this.infos.achatmonth = e.data
+      if(e.status == 200)
+      {
+        this.infos.achatmonth = e.data
+      }else{
+        this.alrt('Erreur dans server','','error')
+      }
     })
     run22.catch(e=>{
       console.log('err')
@@ -679,7 +712,12 @@ export default {
 
     var run3 =  axios.get(this.link() + 'countclient',this.cors())
    await run3.then(e=>{
-      this.infos.clients = e.data
+     if(e.status == 200)
+     {
+       this.infos.clients = e.data
+     }else{
+       this.alrt('Erreur dans server','','error')
+     }
     })
     run3.catch(e=>{
       console.log('err')
@@ -687,7 +725,12 @@ export default {
 
     var run4 =  axios.get(this.link() + 'countrec',this.cors())
    await run4.then(e=>{
-      this.infos.recs = e.data
+     if(e.status == 200)
+     {
+       this.infos.recs = e.data
+     }else{
+       this.alrt('Erreur dans server','','error')
+     }
     })
     run4.catch(e=>{
       console.log('err')
@@ -695,7 +738,12 @@ export default {
 
     var run5 = axios.get(this.link() + 'revenu',this.cors())
     await run5.then(e=>{
-      this.infos.revenu = e.data
+      if(e.status == 200)
+      {
+        this.infos.revenu = e.data
+      }else{
+        this.alrt('Erreur dans server','','error')
+      }
     })
     run5.catch(e=>{
       console.log('err')
@@ -703,7 +751,12 @@ export default {
 
     var run6 = axios.get(this.link() + 'dacaht',this.cors())
    await run6.then(e=>{
-      this.infos.dachat = e.data
+     if(e.status == 200)
+     {
+       this.infos.dachat = e.data
+     }else{
+       this.alrt('Erreur dans server','','error')
+     }
     })
     run6.catch(e=>{
       console.log('err')
@@ -711,7 +764,12 @@ export default {
 
     var run7 = axios.get(this.link() + 'nbrproduct',this.cors())
     await run7.then(e=>{
-      this.infos.nbrproduct = e.data
+      if(e.status == 200)
+      {
+        this.infos.nbrproduct = e.data
+      }else{
+        this.alrt('Erreur dans server','','error')
+      }
     })
     run7.catch(e=>{
       console.log('err')
@@ -719,7 +777,12 @@ export default {
 
     var run8 = axios.get(this.link() + 'fns',this.cors())
    await run8.then(e=>{
-      this.infos.fns = e.data
+     if(e.status == 200)
+     {
+       this.infos.fns = e.data
+     }else{
+       this.alrt('Erreur dans server','','error')
+     }
     })
     run8.catch(e=>{
       console.log('err')
@@ -727,7 +790,12 @@ export default {
 
     var run9 = axios.get(this.link() + 'stksrt',this.cors())
     await run9.then(e=>{
-      this.infos.stocksor = e.data
+      if(e.status == 200)
+      {
+        this.infos.stocksor = e.data
+      }else{
+        this.alrt('Erreur dans server','','error')
+      }
     })
     run9.catch(e=>{
       console.log('err')
@@ -735,7 +803,12 @@ export default {
 
     var run10 = axios.get(this.link() + 'stockss',this.cors())
     await run10.then(e=>{
-      this.infos.stks = e.data
+      if(e.status == 200)
+      {
+        this.infos.stks = e.data
+      }else{
+        this.alrt('Erreur dans server','','error')
+      }
     })
     run10.catch(e=>{
       console.log('err')
@@ -743,7 +816,12 @@ export default {
 
     var run11 = axios.get(this.link() + 'stken',this.cors())
     await run11.then(e=>{
-      this.infos.stocken = e.data
+      if(e.status == 200)
+      {
+        this.infos.stocken = e.data
+      }else{
+        this.alrt('Erreur dans server','','error')
+      }
     })
     run11.catch(e=>{
       console.log('err')
